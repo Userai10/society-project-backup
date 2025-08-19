@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTheme } from '../../contexts/ThemeContext';
-import { Event, Announcement, Resource } from '../../types';
 import { Plus, Calendar, Users, FileText, Trash2 } from 'lucide-react';
 import EventCard from './EventCard';
 import AnnouncementCard from './AnnouncementCard';
@@ -10,6 +9,31 @@ import CreateEventModal from './CreateEventModal';
 import CreateAnnouncementModal from './CreateAnnouncementModal';
 import CreateResourceModal from './CreateResourceModal';
 
+interface Event {
+  id: string;
+  title: string;
+  date: string;
+  time: string;
+  location: string;
+  description: string;
+}
+
+interface Announcement {
+  id: string;
+  title: string;
+  content: string;
+  priority: 'high' | 'medium' | 'low';
+  date: string;
+}
+
+interface Resource {
+  id: string;
+  title: string;
+  type: 'document' | 'link' | 'video';
+  url: string;
+  description: string;
+}
+
 const SeniorDashboard: React.FC = () => {
   const { user } = useAuth();
   const { isDark } = useTheme();
@@ -17,7 +41,7 @@ const SeniorDashboard: React.FC = () => {
     {
       id: '1',
       title: 'Annual Tech Conference',
-      date: new Date('2024-02-15'),
+      date: '2024-02-15',
       time: '10:00 AM',
       location: 'Main Auditorium',
       description: 'Join us for our biggest tech event of the year!'
@@ -25,7 +49,7 @@ const SeniorDashboard: React.FC = () => {
     {
       id: '2',
       title: 'Workshop: React Best Practices',
-      date: new Date('2024-02-20'),
+      date: '2024-02-20',
       time: '2:00 PM',
       location: 'Lab 101',
       description: 'Learn advanced React patterns and best practices.'
@@ -37,33 +61,29 @@ const SeniorDashboard: React.FC = () => {
       id: '1',
       title: 'New Meeting Schedule',
       content: 'Weekly meetings will now be held on Wednesdays at 3 PM.',
-      priority: 'High',
-      createdAt: new Date('2024-01-15'),
-      author: 'Admin'
+      priority: 'high',
+      date: '2024-01-15'
     },
     {
       id: '2',
       title: 'Project Deadline Extension',
       content: 'The deadline for the current project has been extended to next Friday.',
-      priority: 'Medium',
-      createdAt: new Date('2024-01-14'),
-      author: 'Manager'
+      priority: 'medium',
+      date: '2024-01-14'
     },
     {
       id: '3',
       title: 'Welcome New Members',
       content: 'Please join us in welcoming our new team members who joined this week.',
-      priority: 'Low',
-      createdAt: new Date('2024-01-13'),
-      author: 'HR Team'
+      priority: 'low',
+      date: '2024-01-13'
     },
     {
       id: '4',
       title: 'System Maintenance',
       content: 'Scheduled maintenance will occur this weekend. Expect brief downtime.',
-      priority: 'High',
-      createdAt: new Date('2024-01-12'),
-      author: 'IT Team'
+      priority: 'high',
+      date: '2024-01-12'
     }
   ]);
 
@@ -101,8 +121,7 @@ const SeniorDashboard: React.FC = () => {
     const newAnnouncement: Announcement = {
       ...announcementData,
       id: Date.now().toString(),
-      createdAt: new Date(),
-      author: user?.email?.split('@')[0] || 'Admin'
+      date: new Date().toISOString().split('T')[0]
     };
     setAnnouncements([newAnnouncement, ...announcements]);
     setShowAnnouncementModal(false);
@@ -217,7 +236,7 @@ const SeniorDashboard: React.FC = () => {
               <div className="space-y-3">
                 {announcements.map((announcement) => (
                   <div key={announcement.id} className="relative group">
-                    <AnnouncementCard announcement={announcement} canEdit={true} />
+                    <AnnouncementCard announcement={announcement} />
                     <button
                       onClick={() => handleDeleteAnnouncement(announcement.id)}
                       className={`absolute top-2 right-2 p-1 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-200 ${

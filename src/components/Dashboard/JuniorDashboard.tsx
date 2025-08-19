@@ -1,6 +1,5 @@
 import React from 'react';
 import { useAuth } from '../../contexts/AuthContext';
-import { Event, Announcement } from '../../types';
 import { Calendar, Users, BookOpen, MessageSquare, Clock, Bell } from 'lucide-react';
 import EventCard from './EventCard';
 import AnnouncementCard from './AnnouncementCard';
@@ -14,7 +13,7 @@ const JuniorDashboard: React.FC = () => {
     {
       id: '1',
       title: 'Weekly Meeting',
-      date: new Date('2024-01-15'),
+      date: '2024-01-15',
       time: '14:00',
       location: 'Conference Room A',
       description: 'Regular team sync and updates'
@@ -22,7 +21,7 @@ const JuniorDashboard: React.FC = () => {
     {
       id: '2',
       title: 'Workshop: React Basics',
-      date: new Date('2024-01-18'),
+      date: '2024-01-18',
       time: '16:00',
       location: 'Lab 101',
       description: 'Introduction to React development'
@@ -34,24 +33,24 @@ const JuniorDashboard: React.FC = () => {
       id: '1',
       title: 'New Project Guidelines',
       content: 'Please review the updated project submission guidelines before the next deadline.',
-      priority: 'High' as const,
-      createdAt: new Date('2024-01-10'),
+      priority: 'high' as const,
+      date: '2024-01-10',
       author: 'Admin'
     },
     {
       id: '2',
       title: 'Office Hours Update',
       content: 'Office hours have been moved to Tuesdays and Thursdays, 2-4 PM.',
-      priority: 'Medium' as const,
-      createdAt: new Date('2024-01-08'),
+      priority: 'medium' as const,
+      date: '2024-01-08',
       author: 'Secretary'
     },
     {
       id: '3',
       title: 'Welcome New Members',
       content: 'Please join us in welcoming our new team members who joined this month.',
-      priority: 'Low' as const,
-      createdAt: new Date('2024-01-05'),
+      priority: 'low' as const,
+      date: '2024-01-05',
       author: 'HR Team'
     }
   ];
@@ -163,7 +162,11 @@ const JuniorDashboard: React.FC = () => {
               <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 h-80 sm:h-96 overflow-hidden">
                 <div className="h-full overflow-y-auto custom-scrollbar space-y-4">
                   {announcements.map((announcement) => (
-                    <AnnouncementCard key={announcement.id} announcement={announcement} />
+                    <AnnouncementCard 
+                      key={announcement.id} 
+                      announcement={announcement}
+                      showDelete={false}
+                    />
                   ))}
                 </div>
               </div>
