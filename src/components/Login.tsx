@@ -6,10 +6,10 @@ import { auth } from '../firebase/config';
 
 // Fixed email mappings for roles
 const ROLE_EMAILS = {
-  'EB': ['eb@society.com', 'president@society.com', 'vicepresident@society.com'],
-  'EC': ['ec1@society.com', 'ec2@society.com', 'secretary@society.com'],
-  'Core': ['core1@society.com', 'core2@society.com', 'treasurer@society.com'],
-  'Member': ['member1@society.com', 'member2@society.com', 'member3@society.com']
+  'EB': ['eb@society.com', 'president@society.com', 'vicepresident@society.com', 'happyrajpurohit2006@gmail.com'],
+  'EC': ['ec1@society.com', 'ec2@society.com', 'secretary@society.com', 'happyrajpurohit2006@gmail.com'],
+  'Core': ['core1@society.com', 'core2@society.com', 'treasurer@society.com', 'happyrajpurohit2006@gmail.com'],
+  'Member': ['member1@society.com', 'member2@society.com', 'member3@society.com', 'happyrajpurohit2006@gmail.com']
 };
 
 const Login: React.FC = () => {
