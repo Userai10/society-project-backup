@@ -6,14 +6,47 @@ import { auth } from '../firebase/config';
 
 // Fixed email mappings for roles
 const ROLE_EMAILS = {
-  'EB': ['happyrajpurohit2006@gmail.com', 'psareen_be24@thapar.edu'],
-  'EC': ['happyrajpurohit2006@gmail.com'],
+  'EB': ['happyrajpurohit2006@gmail.com', 'psareen_be24@thapar.edu', 'bhavyaagarwal00000@gmail.com', 'lgupta1_be23@thapar.edu', 'ecdev4ishan@gmail.com', 'abhinivesh2005@gmail.com', 'raghav98233@gmail.com', 'isharma1_be23@thapar.edu' ],
+  'EC': ['happyrajpurohit2006@gmail.com', 'chopragarv0@gmail.com'],
   'Core': ['happyrajpurohit2006@gmail.com', 
     'extraid11981@gmail.com', 
     'psareen_be24@thapar.edu',
-  'achopra_be24@thapar.edu'
+  'achopra_be24@thapar.edu',
+  'marushikagupta@gmail.com',
+  'agupta16_be24@thapar.edu',
+  'parakhgeetika@gmail.com',
+  'Mgupta1_be24@thapar.edu',
+  'arathore_be24@thapar.edu',
+    'aarora4_be24@thapar.edu',
+    'ugoyal_be24@thapar.edu',
+    'asharma23_be24@thapar.edu',
+    'arshiabajaj51@gmail.com',
+    'saanvikhurana06@gmail.com',
+    'mahuja_be24@thapar.edu',
+    'sgera_be24@thapar.edu',
+    'darya_be24@thapar.edu',
+    'kbansal3_be24@thapar.edu',
+    'prishuacharya@gmail.com',
+    'mgoela_be24@thapar.edu',
+    'ngupta4_be24@thapar.edu'
   ],
-  'Member': ['happyrajpurohit2006@gmail.com']
+  'Member': ['happyrajpurohit2006@gmail.com',
+    'imittal_be24@thapar.edu',
+    'ggoyal1_be24@thapar.edu',
+    'riddhidhawan2@gmail.com',
+    'singhmanavjit100@gmail.com',
+    'rsharma2_be24@thapar.edu',
+    'harshittaneja71@gmail.com',
+    'nverma1_be24@thapar.edu',
+    'ajwandha_be24@thapar.edu',
+    'agandhi_be24@thapar.edu',
+    'kgautam_be24@thapar.edu',
+    'ajuneja_be24@thapar.edu',
+    'smishra_be24@thapar.edu',
+    'upant_be24@thapar.edu',
+    'PARVDHRUV@GMAIL.COM',
+    'abassi_be24@thapar.edu'
+  ]
 };
 
 const Login: React.FC = () => {

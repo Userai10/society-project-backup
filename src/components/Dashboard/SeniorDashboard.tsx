@@ -251,6 +251,47 @@ const SeniorDashboard: React.FC = () => {
         {/* Resources Section */}
         <ResourcesSection />
 
+        
+
+        {/* Events Section */}
+        {/* Task Management Section */}
+        <section className="mb-12">
+          <div className="text-center mb-6 sm:mb-8 px-2 sm:px-0">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">Task Management</h2>
+            <p className="text-gray-400">Assign and track task progress</p>
+          </div>
+          <div className="bg-gray-800 rounded-xl p-4 sm:p-6 mx-2 sm:mx-0">
+            <div className="text-center">
+              <p className="text-gray-400 mb-4">Navigate to the dedicated Task Management section</p>
+              <a
+                href="/tasks"
+                className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm sm:text-base"
+              >
+                Go to Tasks
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Feedback Section */}
+        <section className="mb-12">
+          <div className="text-center mb-6 sm:mb-8 px-2 sm:px-0">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">Event Feedback</h2>
+            <p className="text-gray-400">View feedback from members</p>
+          </div>
+          <div className="bg-gray-800 rounded-xl p-4 sm:p-6 mx-2 sm:mx-0">
+            <div className="text-center">
+              <p className="text-gray-400 mb-4">Access detailed feedback analytics</p>
+              <a
+                href="/feedback"
+                className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm sm:text-base"
+              >
+                View Feedback
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* Built By Section */}
         <section className="mb-12">
           <div className="text-center mb-8 sm:mb-12 px-2 sm:px-0">
@@ -326,45 +367,6 @@ const SeniorDashboard: React.FC = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </section>
-
-        {/* Events Section */}
-        {/* Task Management Section */}
-        <section className="mb-12">
-          <div className="text-center mb-6 sm:mb-8 px-2 sm:px-0">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">Task Management</h2>
-            <p className="text-gray-400">Assign and track task progress</p>
-          </div>
-          <div className="bg-gray-800 rounded-xl p-4 sm:p-6 mx-2 sm:mx-0">
-            <div className="text-center">
-              <p className="text-gray-400 mb-4">Navigate to the dedicated Task Management section</p>
-              <a
-                href="/tasks"
-                className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm sm:text-base"
-              >
-                Go to Tasks
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* Feedback Section */}
-        <section className="mb-12">
-          <div className="text-center mb-6 sm:mb-8 px-2 sm:px-0">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">Event Feedback</h2>
-            <p className="text-gray-400">View feedback from members</p>
-          </div>
-          <div className="bg-gray-800 rounded-xl p-4 sm:p-6 mx-2 sm:mx-0">
-            <div className="text-center">
-              <p className="text-gray-400 mb-4">Access detailed feedback analytics</p>
-              <a
-                href="/feedback"
-                className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm sm:text-base"
-              >
-                View Feedback
-              </a>
-            </div>
           </div>
         </section>
 
